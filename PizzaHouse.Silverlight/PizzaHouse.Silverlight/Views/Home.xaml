@@ -1,0 +1,57 @@
+﻿<navigation:Page x:Class="PizzaHouse.Silverlight.Home" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+    mc:Ignorable="d" d:DesignWidth="640" d:DesignHeight="480"
+    Title="Home">
+	<navigation:Page.Resources>
+		<ControlTemplate x:Key="HyperlinkButtonControlTemplate1" TargetType="HyperlinkButton">
+			<Grid>
+				<VisualStateManager.VisualStateGroups>
+					<VisualStateGroup x:Name="CommonStates">
+						<VisualStateGroup.Transitions>
+							<VisualTransition GeneratedDuration="0:0:0.2">
+								<VisualTransition.GeneratedEasingFunction>
+									<CircleEase EasingMode="EaseOut"/>
+								</VisualTransition.GeneratedEasingFunction>
+							</VisualTransition>
+						</VisualStateGroup.Transitions>
+						<VisualState x:Name="Disabled"/>
+						<VisualState x:Name="Normal"/>
+						<VisualState x:Name="MouseOver">
+							<Storyboard>
+								<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="MouseOverDecoration" d:IsOptimized="True"/>
+							</Storyboard>
+						</VisualState>
+						<VisualState x:Name="Pressed">
+							<Storyboard>
+								<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="MouseDownDecoration" d:IsOptimized="True"/>
+							</Storyboard>
+						</VisualState>
+					</VisualStateGroup>
+				</VisualStateManager.VisualStateGroups>
+				<Rectangle x:Name="MouseDownDecoration" Stroke="Black" Fill="#4C000000" StrokeThickness="0" Opacity="0"/>
+				<Rectangle x:Name="MouseOverDecoration" Fill="#19000000" Stroke="Black" StrokeThickness="0" Opacity="0"/>
+				<TextBlock TextWrapping="Wrap" Text="{TemplateBinding Content}" FontFamily="{TemplateBinding FontFamily}" FontSize="{TemplateBinding FontSize}" FontWeight="{TemplateBinding FontWeight}" FontStyle="{TemplateBinding FontStyle}" Foreground="{TemplateBinding Foreground}" VerticalAlignment="Center" d:LayoutOverrides="Width" Margin="{TemplateBinding Padding}" HorizontalAlignment="Center"/>
+			</Grid>
+		</ControlTemplate>
+		<Style TargetType="HyperlinkButton">
+			<Setter Property="Margin" Value="100,20,20,20"/>
+			<Setter Property="Padding" Value="10"/>
+			<Setter Property="HorizontalAlignment" Value="Left"/>
+			<Setter Property="MinWidth" Value="300"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Foreground" Value="#FFA91616"/>
+			<Setter Property="Template" Value="{StaticResource HyperlinkButtonControlTemplate1}"/>
+		</Style>
+	</navigation:Page.Resources>
+
+    <StackPanel x:Name="LayoutRoot">
+    	<HyperlinkButton Content="Place an Order" NavigateUri="/NotImplemented"/>
+    	<HyperlinkButton Content="Track your order" NavigateUri="/TrackOrders"/>
+    	<HyperlinkButton Content="Menus" NavigateUri="/NotImplemented"/>
+    	<HyperlinkButton Content="Locations" NavigateUri="/NotImplemented"/>
+    </StackPanel>
+
+</navigation:Page>

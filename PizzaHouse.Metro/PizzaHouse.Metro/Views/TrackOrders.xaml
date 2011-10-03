@@ -1,0 +1,91 @@
+﻿<Page x:Class="PizzaHouse.Metro.Views.TrackOrders" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="640" d:DesignHeight="480">
+	<Page.Resources>
+        <CollectionViewSource x:Name="GroupedCollectionViewSource" x:Key="GroupedCollectionViewSource" />
+
+        <DataTemplate x:Key="OrdersTemplate">
+			<Grid Margin="0,0,0,10">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition/>
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition/>
+					<ColumnDefinition Width="12"/>
+					<ColumnDefinition/>
+				</Grid.ColumnDefinitions>
+				<Grid.Resources>
+					<Style TargetType="TextBlock">
+						<Setter Property="FontFamily" Value="Segoe UI"/>
+						<Setter Property="FontSize" Value="14.667"/>
+					</Style>
+				</Grid.Resources>
+				<TextBlock Text="Date:" />
+				<TextBlock Grid.Column="2" Text="{Binding Date}" />
+				<TextBlock Grid.Row="1" Text="Status:" />
+				<TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding Status}" />
+			</Grid>
+		</DataTemplate>
+        <ItemsPanelTemplate x:Key="GridItemsPanelTemplate">
+            <StackPanel Orientation="Horizontal" Margin="120,0,0,0" />
+            <!-- Workaround: this should be a virtualizing stack panel but it currently fails when switching between view states
+            <VirtualizingStackPanel Orientation="Horizontal" Margin="120,0,0,0" VirtualizationMode="Recycling"/> -->
+        </ItemsPanelTemplate>
+    </Page.Resources>
+
+    <Grid>
+        
+        <!-- Grid presentation used in all other view states -->
+        <GridView x:Name="ItemGridView" ItemsSource="{Binding Source={StaticResource GroupedCollectionViewSource}}"
+              ItemTemplate="{StaticResource OrdersTemplate}" ItemContainerStyle="{StaticResource GridTileStyle}" ItemsPanel="{StaticResource GridItemsPanelTemplate}"
+              BorderThickness="0" VerticalAlignment="Stretch" SelectionChanged="ItemGridView_SelectionChanged">
+            <GridView.GroupStyle>
+                <GroupStyle>
+                    <GroupStyle.Panel>
+                        <ItemsPanelTemplate>
+                            <VariableSizedWrapGrid Orientation="Vertical" Margin="0,0,80,0"/>
+                        </ItemsPanelTemplate>
+                    </GroupStyle.Panel>
+                    <GroupStyle.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Margin="0,0,0,8" Style="{StaticResource LargeContentFontStyle}" Text="{Binding Name.Title}" />
+                        </DataTemplate>
+                    </GroupStyle.HeaderTemplate>
+
+                    <!-- Workaround: this is currently necessary to limit the number of items displayed to the available space -->
+
+                    <GroupStyle.ContainerStyle>
+                        <Style TargetType="GroupItem">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="GroupItem">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="*" />
+                                            </Grid.RowDefinitions>
+                                            <ContentPresenter Grid.Row="0"/>
+                                            <ItemsControl x:Name="ItemsControl" Grid.Row="1" ItemsSource="{Binding GroupItems}" ItemTemplate="{StaticResource OrdersTemplate}" />
+                                        </Grid>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </GroupStyle.ContainerStyle>
+                </GroupStyle>
+            </GridView.GroupStyle>
+        </GridView>
+<!--
+        <TextBlock Text="In Progress Orders" FontFamily="Segoe UI" FontSize="24" Margin="0,6,0,0"/>
+		<ListBox Height="100" ItemsSource="{Binding InProgressOrders}" SelectionChanged="ListBox_SelectionChanged" ItemTemplate="{StaticResource OrdersTemplate}" BorderThickness="0" />
+		<TextBlock Text="Previous Orders" FontFamily="Segoe UI" FontSize="24" Margin="0,6,0,0"/>
+		<ListBox Height="400" ItemsSource="{Binding PreviousOrders}" SelectionChanged="ListBox_SelectionChanged" ItemTemplate="{StaticResource OrdersTemplate}" BorderThickness="0"/>
+-->
+    </Grid>
+
+</Page>

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  
+  <Identity Name="1c087489-010a-4325-aa46-29d2e6e54eb3"
+            Publisher="CN=bdewey01"
+            Version="1.0.0.0" />
+  
+  <Properties>
+    <DisplayName>PizzaHouse</DisplayName>
+    <PublisherDisplayName>bdewey01</PublisherDisplayName>
+    <Logo>Images\StoreLogo.png</Logo>
+    <Description>PizzaHouse</Description>
+  </Properties>
+  
+  <Prerequisites>
+    <OSMinVersion>6.2</OSMinVersion>
+    <OSMaxVersionTested>6.2</OSMaxVersionTested>
+  </Prerequisites>
+  
+  <Resources>
+    <Resource Language="en-us"/>
+  </Resources>
+  
+  <Applications>
+    <Application Id="App" 
+        Executable="pizzahouse.exe" 
+        EntryPoint="PizzaHouse.App">
+        <VisualElements 
+            DisplayName="PizzaHouse"
+            Logo="Images\Logo.png"
+            SmallLogo="Images\SmallLogo.png"
+            Description="PizzaHouse"
+            ForegroundText="light"
+            BackgroundColor="#222222">
+            <SplashScreen Image="Images\SplashScreen.png" />
+        </VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>

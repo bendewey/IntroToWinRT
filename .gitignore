@@ -1,0 +1,13 @@
+*ReSharper*
+*.user
+obj/
+*.suo
+bin/
+.DS_Store
+*.pidb
+Bin/
+*.userprefs
+ipch/
+Debug/
+bld/
+Packages/

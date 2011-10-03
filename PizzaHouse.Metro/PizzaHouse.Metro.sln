@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 11 Express for Windows 8
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaHouse.Metro", "PizzaHouse.Metro\PizzaHouse.Metro.csproj", "{076562DE-0569-4580-A334-02ABB1DA054E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaHouse.ViewModel", "PizzaHouse.ViewModel\PizzaHouse.ViewModel.csproj", "{9EB2275E-6977-4BC0-BD10-F417E18A5694}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{076562DE-0569-4580-A334-02ABB1DA054E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{076562DE-0569-4580-A334-02ABB1DA054E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{076562DE-0569-4580-A334-02ABB1DA054E}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{076562DE-0569-4580-A334-02ABB1DA054E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{076562DE-0569-4580-A334-02ABB1DA054E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{076562DE-0569-4580-A334-02ABB1DA054E}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{9EB2275E-6977-4BC0-BD10-F417E18A5694}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EB2275E-6977-4BC0-BD10-F417E18A5694}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EB2275E-6977-4BC0-BD10-F417E18A5694}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EB2275E-6977-4BC0-BD10-F417E18A5694}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="PizzaHouse.Metro" Publisher="CN=bdewey01" Version="1.0.0.0" />
+  <Properties>
+    <DisplayName>PizzaHouse.Metro</DisplayName>
+    <PublisherDisplayName>bdewey01</PublisherDisplayName>
+    <Logo>Images\StoreLogo.png</Logo>
+    <Description>PizzaHouse.Metro</Description>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2</OSMinVersion>
+    <OSMaxVersionTested>6.2</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="en-us" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="pizzahouse.metro.exe" EntryPoint="PizzaHouse.Metro.App">
+      <VisualElements DisplayName="PizzaHouse.Metro" Logo="Images\Logo.png" SmallLogo="Images\SmallLogo.png" Description="PizzaHouse.Metro" ForegroundText="light" BackgroundColor="#222222" InitialRotationPreference="portrait">
+        <DefaultTile WideLogo="Images\WideLogo.png" />
+        <SplashScreen Image="Images\SplashScreen.png" />
+      </VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>

@@ -1,0 +1,45 @@
+﻿<navigation:Page x:Class="PizzaHouse.Silverlight.TrackOrders" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+    mc:Ignorable="d" d:DesignWidth="640" d:DesignHeight="480"
+    Title="Track Orders">
+	<navigation:Page.Resources>
+		<DataTemplate x:Key="OrdersTemplate">
+			<Grid Margin="0,0,0,10">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition/>
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition/>
+					<ColumnDefinition Width="12"/>
+					<ColumnDefinition/>
+				</Grid.ColumnDefinitions>
+				<Grid.Resources>
+					<Style TargetType="TextBlock">
+						<Setter Property="FontFamily" Value="/PizzaHouse.Silverlight;component/Fonts/Fonts.zip#Segoe UI"/>
+						<Setter Property="FontSize" Value="14.667"/>
+					</Style>
+				</Grid.Resources>
+				<TextBlock Text="Date:" />
+				<TextBlock Grid.Column="2" Text="{Binding Date}" />
+				<TextBlock Grid.Row="1" Text="Status:" />
+				<TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding Status}" />
+			</Grid>
+		</DataTemplate>
+		<Style x:Key="OrderListItemStyle" TargetType="ListBoxItem"/>
+	</navigation:Page.Resources>
+
+    <StackPanel HorizontalAlignment="Left" Margin="100,0,0,0">
+		<TextBlock Text="In Progress Orders" FontFamily="/PizzaHouse.Silverlight;component/Fonts/Fonts.zip#Segoe UI" FontSize="24" Margin="0,6,0,0"/>
+		<ListBox Height="100" ItemsSource="{Binding InProgressOrders}" SelectionChanged="ListBox_SelectionChanged" ItemTemplate="{StaticResource OrdersTemplate}" BorderThickness="0" />
+		<TextBlock Text="Previous Orders" FontFamily="/PizzaHouse.Silverlight;component/Fonts/Fonts.zip#Segoe UI" FontSize="24" Margin="0,6,0,0"/>
+		<ListBox Height="400" ItemsSource="{Binding PreviousOrders}" SelectionChanged="ListBox_SelectionChanged" ItemTemplate="{StaticResource OrdersTemplate}" BorderThickness="0"/>
+
+	</StackPanel>
+
+</navigation:Page>

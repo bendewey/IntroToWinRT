@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaHouse.Silverlight", "PizzaHouse.Silverlight\PizzaHouse.Silverlight.csproj", "{748AE8FE-8A66-4F5A-B2AF-BE814343A8F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaHouse.Silverlight.Web", "PizzaHouse.Silverlight.Web\PizzaHouse.Silverlight.Web.csproj", "{D172940D-67E4-422E-B1B8-E2E16B2D0B61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaHouse.ViewModel", "PizzaHouse.ViewModel\PizzaHouse.ViewModel.csproj", "{DCA93790-DDBA-4EFC-BED3-956C844F79CC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{748AE8FE-8A66-4F5A-B2AF-BE814343A8F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{748AE8FE-8A66-4F5A-B2AF-BE814343A8F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{748AE8FE-8A66-4F5A-B2AF-BE814343A8F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{748AE8FE-8A66-4F5A-B2AF-BE814343A8F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D172940D-67E4-422E-B1B8-E2E16B2D0B61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D172940D-67E4-422E-B1B8-E2E16B2D0B61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D172940D-67E4-422E-B1B8-E2E16B2D0B61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D172940D-67E4-422E-B1B8-E2E16B2D0B61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCA93790-DDBA-4EFC-BED3-956C844F79CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCA93790-DDBA-4EFC-BED3-956C844F79CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCA93790-DDBA-4EFC-BED3-956C844F79CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCA93790-DDBA-4EFC-BED3-956C844F79CC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

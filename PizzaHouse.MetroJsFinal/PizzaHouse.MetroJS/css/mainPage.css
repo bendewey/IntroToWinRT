@@ -1,0 +1,14 @@
+﻿/*
+ * Define the layout of the page.
+ */
+
+.mainPage #placeAnOrder {
+	margin-left:120px;
+}
+
+.mainPage .mainButtons {
+    width: 336px;
+    height: 558px;
+    margin: 4px 14px 4px 4px;
+	border:0px;
+}
